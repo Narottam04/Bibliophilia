@@ -1,9 +1,23 @@
 import React,{useState} from 'react'
 import { NavLink } from 'react-router-dom';
-
+import {useAuth} from '../Context/AuthContext'
+import { useNavigate } from 'react-router'
 
 export const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+
+    const {logout,currentUser} = useAuth()
+    // const Navigate = useNavigate()
+    console.log(currentUser)
+    async function handleLogout() {
+        try {
+            await logout()
+        }
+        catch{
+            console.log('failed to log out')
+        }
+    }
     
     return (
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -52,28 +66,44 @@ export const Navbar = () => {
               </li>
             </ul>
           </div>
-          <ul className="flex items-center hidden space-x-8 lg:flex">
-            <li>
-              <NavLink
-                to="/login"
-                aria-label="Sign in"
-                title="Sign in"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:"
-              >
-                Log In
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/signup"
-                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md  focus:shadow-outline focus:outline-none bg-blue-400  text-white"
-                aria-label="Sign up"
-                title="Sign up"
-              >
-                Sign up
-              </NavLink>
-            </li>
-          </ul>
+          {
+            !currentUser ?
+            <ul className="flex items-center hidden space-x-8 lg:flex">
+              <li>
+                <NavLink
+                  to="/login"
+                  aria-label="Sign in"
+                  title="Sign in"
+                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:"
+                >
+                  Log In
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/signup"
+                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md  focus:shadow-outline focus:outline-none bg-blue-400  text-white"
+                  aria-label="Sign up"
+                  title="Sign up"
+                >
+                  Sign up
+                </NavLink>
+              </li>
+            </ul>
+            :
+            <ul className="flex items-center hidden space-x-8 lg:flex">
+              <li>
+                <a
+                  onClick = {handleLogout}
+                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md  focus:shadow-outline focus:outline-none bg-blue-400  text-white"
+                  aria-label="Sign up"
+                  title="Sign up"
+                >
+                  Logout
+                </a>
+              </li>
+            </ul>
+          }
           <div className="lg:hidden">
             <button
               aria-label="Open Menu"

@@ -1,6 +1,52 @@
-import React from 'react'
+import React,{useRef,useState} from 'react'
+import {useAuth} from '../../Context/AuthContext'
+import { Link,useNavigate } from 'react-router-dom'
 
-function index() {
+function Index() {
+    const emailref = useRef()
+    const passwordref = useRef()
+    const passwordconfirmref = useRef()
+
+    const navigate = useNavigate()
+
+    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(false)
+
+    const {signup,curerntUser, signInWithGoogle} = useAuth()
+
+    async function handleSubmit(e) {
+        e.preventDefault()
+        if(passwordref.current.value !== passwordconfirmref.current.value){
+            return setError('Password do not match')
+        }
+        try {
+            setError('')
+            setLoading(true)
+            const userSignUp = await signup(emailref.current.value, passwordref.current.value)
+            navigate("/login")
+            // updateUserName(usernameref.current.value)
+        }
+        catch {
+            setError("Failed to create an account")
+        }
+        setLoading(false)
+    }
+
+    async function googleSignUp(){
+        try {
+            signInWithGoogle().then(()=> {
+                console.log("successfully logged in")
+                navigate("/")
+            })
+            .catch(()=> {
+                setError("There was some problem redirecting")
+            })
+        }
+        catch{
+            setError("Failed to sign up :(")
+        }
+    }
+
     return (
         <section>
         <div className="flex min-h-screen overflow-hidden">
@@ -12,23 +58,24 @@ function index() {
             </div>
             <div className="mt-8">
                 <div className="mt-6">
-                <form action="#" method="POST" className="space-y-6">
+                {error && <p className = "error">{error}</p> }
+                <form onSubmit = {handleSubmit} className="space-y-6">
                     <div>
                     <label for="email" className="block text-sm font-medium text-neutral-600"> Email address </label>
                     <div className="mt-1">
-                        <input id="email" name="email" type="email" autocomplete="email" required="" placeholder="Your Email" className="block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg  text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"/>
+                        <input id="email" name="email" type="email" autocomplete="email"    ref = {emailref} required placeholder="Your Email" className="block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg  text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"/>
                     </div>
                     </div>
                     <div className="space-y-1">
                     <label for="password" className="block text-sm font-medium text-neutral-600"> Password </label>
                     <div className="mt-1">
-                        <input id="password" name="password" type="password" autocomplete="current-password" required="" placeholder="Your Password" className="block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg  text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
+                        <input id="password" name="password" type="password" autocomplete="current-password" ref = {passwordref}  required placeholder="Your Password" className="block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg  text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
                     </div>
                     </div>
                     <div className="space-y-1">
                     <label for="password" className="block text-sm font-medium text-neutral-600"> Confirm Password </label>
                     <div className="mt-1">
-                        <input id="password" name="password" type="password" autocomplete="current-password" required="" placeholder="Confirm your Password" className="block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg  text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
+                        <input id="password" name="password" type="password" autocomplete="current-password" ref = {passwordconfirmref} required placeholder="Confirm your Password" className="block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg  text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
                     </div>
                     </div>
                     <div className="flex items-center justify-end">
@@ -41,9 +88,12 @@ function index() {
                     </div> */}
                     </div>
                     <div>
-                    <button type="submit" className="flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-400  rounded-xl hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"> Sign Up </button>
+                    <input type="submit" disabled = {loading} value={loading ? "Give us a sec": "Sign Up"} className="flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-400  rounded-xl hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"/> 
                     </div>
                 </form>
+                <Link to = "/login" className="text-md my-8 flex justify-center">
+                        <a href="#" className="font-medium text-blue-400 hover:text-blue-500"> Already have an account? Log In </a>
+                </Link>
                 <div className="relative my-4">
                     <div className="absolute inset-0 flex items-center">
                     <div className="w-full border-t border-gray-300"></div>
@@ -74,10 +124,10 @@ function index() {
                 focus:ring-offset-2
                 focus:ring-gray-500
                 ">
-                    <div className="flex items-center justify-center">
+                    <a onClick = {()=>googleSignUp()} className="flex items-center justify-center">
                         <img src="https://img.icons8.com/color/48/000000/google-logo.png" classNameName = ""/>
                         <span className="ml-4"> Log in with Google</span>
-                    </div>
+                    </a>
                     </button>
                 </div>
                 </div>
@@ -92,6 +142,6 @@ function index() {
     )
 }
 
-export default index
+export default Index
 
 

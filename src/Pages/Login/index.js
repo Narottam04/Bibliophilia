@@ -1,6 +1,46 @@
-import React from 'react'
+import React,{useRef, useState} from 'react'
+import {useAuth} from '../../Context/AuthContext'
+import { Link, useNavigate } from 'react-router-dom'
+function Index() {
+    const emailref = useRef()
+    const passwordref = useRef()
 
-function index() {
+    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(false)
+
+    const navigate = useNavigate()
+
+    const {login,signInWithGoogle} = useAuth()
+
+    async function handleSubmit(e) {
+        e.preventDefault()
+        console.log(emailref.current.value, passwordref.current.value)
+        try {
+            setError('')
+            setLoading(true)
+            await login(emailref.current.value, passwordref.current.value)
+            navigate("/")
+        }
+        catch {
+            setError("Failed to sign in")
+        }
+        setLoading(false)
+    }
+
+    async function googleSignUp(){
+        try {
+            signInWithGoogle().then(()=> {
+                console.log("successfully logged in")
+                navigate("/")
+            })
+            .catch(()=> {
+                setError("There was some problem redirecting")
+            })
+        }
+        catch{
+            setError("Failed to sign up :(")
+        }
+    }
     return (
         <section>
         <div className="flex min-h-screen overflow-hidden">
@@ -9,20 +49,21 @@ function index() {
             <div>
                 <a href="/" className="font-yeseva text-blue-400 text-medium">Bibliophilia</a>
                 <h2 className="font-merriweather mt-6 text-3xl font-bold text-neutral-600"> Log In. </h2>
+                {error && <p className = "error">{error}</p> }
             </div>
             <div className="mt-8">
                 <div className="mt-6">
-                <form action="#" method="POST" className="space-y-6">
+                <form onSubmit = {handleSubmit} className="space-y-6">
                     <div>
                     <label for="email" className="block text-sm font-medium text-neutral-600"> Email address </label>
                     <div className="mt-1">
-                        <input id="email" name="email" type="email" autocomplete="email" required="" placeholder="Your Email" className="block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg  text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"/>
+                        <input id="email" name="email" type="email" autocomplete="email" required ref = {emailref} placeholder="Your Email" className="block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg  text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"/>
                     </div>
                     </div>
                     <div className="space-y-1">
                     <label for="password" className="block text-sm font-medium text-neutral-600"> Password </label>
                     <div className="mt-1">
-                        <input id="password" name="password" type="password" autocomplete="current-password" required="" placeholder="Your Password" className="block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg  text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
+                        <input id="password" name="password" type="password" autocomplete="current-password" required ref = {passwordref} placeholder="Your Password" className="block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg  text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
                     </div>
                     </div>
                     <div className="flex items-center justify-end">
@@ -31,9 +72,12 @@ function index() {
                     </div>
                     </div>
                     <div>
-                    <button type="submit" className="flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-400  rounded-xl hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"> Log In </button>
+                    <input  type="submit"  disabled = {loading} value={loading ? "Logging You In": "Login"} type="submit" className="flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-400  rounded-xl hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"/>
                     </div>
                 </form>
+                <Link to = "/signup" className="text-md my-8 flex justify-center">
+                        <a href="#" className="font-medium text-blue-400 hover:text-blue-500"> Don't have an account? Sign Up  </a>
+                </Link>
                 <div className="relative my-4">
                     <div className="absolute inset-0 flex items-center">
                     <div className="w-full border-t border-gray-300"></div>
@@ -42,7 +86,7 @@ function index() {
                     <span className="px-2 bg-white text-neutral-600"> Or continue with </span>
                     </div>
                 </div>
-                <div>
+                <a onClick = {()=> googleSignUp()}>
                     <button type="submit" className="
                 w-full
                 items-center
@@ -69,7 +113,7 @@ function index() {
                         <span className="ml-4"> Log in with Google</span>
                     </div>
                     </button>
-                </div>
+                </a>
                 </div>
             </div>
             </div>
@@ -82,6 +126,6 @@ function index() {
     )
 }
 
-export default index
+export default Index
 
 

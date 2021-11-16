@@ -13,3 +13,18 @@
 .font-merriweather {
     font-family: 'Merriweather Sans', sans-serif;
 }
+
+/* Spinner */
+.dots-5 {
+    width:12px;
+    height:12px;
+    background: #eb8f72;
+    border-radius: 50%;
+    box-shadow: 20px 0 #00000022,-20px 0 #eb8f72;
+    animation:d5 1s infinite linear alternate;
+}
+@keyframes d5 {
+    0% {box-shadow: 20px 0 #eb8f72,-20px 0 #00000022;background: #eb8f72}
+    33%{box-shadow: 20px 0 #eb8f72,-20px 0 #00000022;background: #00000022}
+    66%{box-shadow: 20px 0 #00000022,-20px 0 #eb8f72;background: #00000022}
+}

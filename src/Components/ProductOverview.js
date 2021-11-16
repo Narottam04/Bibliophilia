@@ -4,6 +4,7 @@ import {Footer} from './Footer'
 import { useParams } from 'react-router-dom';
 import {commerce} from '../lib/commerce'
 import Product from './Product';
+import Spinner from './Spinner';
 function ProductOverview() {
     const [product, setproduct] = useState([])
     const [loading, setLoading] = useState(true)
@@ -29,7 +30,7 @@ function ProductOverview() {
     return (
         <div>
             <Navbar/>
-            {loading ? 'loading...' : 
+            {loading ? <Spinner/> : 
                 <section class="text-gray-700 body-font overflow-hidden bg-white">
                 <div class="container px-5 py-24 mx-auto">
                     <div class="lg:w-4/5 mx-auto flex justify-center flex-wrap">
