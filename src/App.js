@@ -9,6 +9,7 @@ import ContactUs from './Pages/ContactUs'
 import SellBook from './Pages/Sell Book'
 import ViewAllBooks from './Pages/ViewAllBooks'
 import ProductOverview from './Components/ProductOverview'
+import SellerInfo from './Components/SellerInfo'
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,7 @@ function App() {
           <Route path = "/sellbook"  element = {<SellBook />} />
           <Route path = "/allbooks"  element = {<ViewAllBooks />} />
           <Route path = "/products/:productId" element = {<ProductOverview />} />
+          <Route path = "/sellerinfo/:productId" element = {<SellerInfo />} />
         </Routes>
       </AuthProvider>
     </div>
