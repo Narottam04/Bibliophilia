@@ -3,7 +3,6 @@ import {Navbar} from './Navbar'
 import {Footer} from './Footer'
 import { useParams } from 'react-router-dom';
 import {commerce} from '../lib/commerce'
-import Product from './Product';
 import Spinner from './Spinner';
 
 import {useAuth} from '../Context/AuthContext'

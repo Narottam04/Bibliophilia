@@ -1,7 +1,8 @@
 import React from 'react'
 import {Navbar} from '../../Components/Navbar'
 import {Footer} from '../../Components/Footer'
-import Product from '../../Components/Product'
+import FeaturedProduct from '../../Components/FeaturedProduct'
+import { Link } from 'react-router-dom'
 function index() {
     return (
         <>
@@ -30,19 +31,29 @@ function index() {
                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. explicabo.
                 </p>
                 <div class="flex items-center">
-                    <a
-                    href="/"
+                    <Link
+                    to="/allbooks"
                     class="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none bg-blue-400 "
                     >
                     View All Books
-                    </a>
-                    <a href="/" aria-label="" class="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700">Become A Seller</a>
+                    </Link>
+                    <Link to="/sellbook" aria-label="" class="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700">Become A Seller</Link>
                 </div>
                 </div>
             </div>
             </div>
 
-            <Product/>
+            <FeaturedProduct/>
+            <div className = "flex justify-center">
+                <Link
+                    to="/allbooks"
+                    className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md  focus:shadow-outline focus:outline-none bg-blue-400  text-white"
+                    aria-label="Sign up"
+                    title="Sign up"
+                    >
+                    View More Books
+                </Link>
+            </div>
             <Footer/>
         </>
     )

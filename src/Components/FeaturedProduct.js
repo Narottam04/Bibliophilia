@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import {commerce} from '../lib/commerce'
 
-function Product() {
+function FeaturedProduct() {
     const [products, setproducts] = useState([])
     const fetchProducts = async () => {
         const {data} = await commerce.products.list();
@@ -17,9 +17,11 @@ function Product() {
     return (
         <div className="bg-white">
         <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+            <h2 className="font-merriweather text-center text-4xl pb-12 font-bold tracking-tight text-gray-900">Featured Products</h2>
+
             <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"> 
                 {
-                    products.map((item)=> {
+                    products.slice(0,8).map((item)=> {
                         return(
                             <Link key = {item.id} to ={`/products/${item.permalink}`} className="group relative">
                                 <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
@@ -48,4 +50,4 @@ function Product() {
     )
 }
 
-export default Product
+export default FeaturedProduct
