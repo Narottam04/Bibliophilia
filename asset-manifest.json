@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Bibliophilia/static/css/main.8627d529.chunk.css",
+    "main.js": "/Bibliophilia/static/js/main.578ae154.chunk.js",
+    "main.js.map": "/Bibliophilia/static/js/main.578ae154.chunk.js.map",
+    "runtime-main.js": "/Bibliophilia/static/js/runtime-main.89911c9c.js",
+    "runtime-main.js.map": "/Bibliophilia/static/js/runtime-main.89911c9c.js.map",
+    "static/js/2.bd3f4703.chunk.js": "/Bibliophilia/static/js/2.bd3f4703.chunk.js",
+    "static/js/2.bd3f4703.chunk.js.map": "/Bibliophilia/static/js/2.bd3f4703.chunk.js.map",
+    "index.html": "/Bibliophilia/index.html",
+    "static/css/main.8627d529.chunk.css.map": "/Bibliophilia/static/css/main.8627d529.chunk.css.map",
+    "static/js/2.bd3f4703.chunk.js.LICENSE.txt": "/Bibliophilia/static/js/2.bd3f4703.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.89911c9c.js",
+    "static/js/2.bd3f4703.chunk.js",
+    "static/css/main.8627d529.chunk.css",
+    "static/js/main.578ae154.chunk.js"
+  ]
+}
