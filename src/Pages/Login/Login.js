@@ -1,7 +1,7 @@
 import React,{useRef, useState} from 'react'
 import {useAuth} from '../../Context/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
-function Index() {
+function Login() {
     const emailref = useRef()
     const passwordref = useRef()
 
@@ -126,6 +126,6 @@ function Index() {
     )
 }
 
-export default Index
+export default Login
 
 
