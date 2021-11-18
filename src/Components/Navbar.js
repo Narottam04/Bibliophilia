@@ -92,14 +92,14 @@ export const Navbar = () => {
             :
             <ul className="flex items-center hidden space-x-8 lg:flex">
               <li>
-                <a
+                <div
                   onClick = {handleLogout}
                   className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md  focus:shadow-outline focus:outline-none bg-blue-400  text-white"
                   aria-label="Sign up"
                   title="Sign up"
                 >
                   Logout
-                </a>
+                </div>
               </li>
             </ul>
           }

@@ -30,10 +30,10 @@ function FeaturedProduct() {
                                 <div className="mt-4 flex justify-between">
                                 <div>
                                     <h3 className="text-md mr-2 text-gray-700">
-                                    <a href="#">
+                                    <div>
                                         <span aria-hidden="true" className="absolute inset-0"></span>
                                         {item.name}
-                                    </a>
+                                    </div>
                                     </h3>
                                     <p className="mt-1 text-md text-gray-500">Novel</p>
                                 </div>
