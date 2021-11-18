@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import { NavLink } from 'react-router-dom';
 import {useAuth} from '../Context/AuthContext'
-import { useNavigate } from 'react-router'
 
 export const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,7 +8,7 @@ export const Navbar = () => {
 
     const {logout,currentUser} = useAuth()
     // const Navigate = useNavigate()
-    console.log(currentUser)
+    // console.log(currentUser)
     async function handleLogout() {
         try {
             await logout()
