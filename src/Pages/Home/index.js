@@ -3,9 +3,25 @@ import {Navbar} from '../../Components/Navbar'
 import {Footer} from '../../Components/Footer'
 import FeaturedProduct from '../../Components/FeaturedProduct'
 import { Link } from 'react-router-dom'
+import {Helmet} from "react-helmet";
 function index() {
     return (
-        <>
+        <> 
+             <Helmet>
+                <title>Bibliophilia: A Platform Where You Can Buy And Sell Your Old Books.</title>
+                <meta name="description" content="Here on Bibliophilia,we connect you, our book lovers, directly to the sellers. In this way, you can assure everything about the book and see for yourself by having a one-to-one interaction with the seller. So what are you waiting for, sign up and boost your reading journey right away!"/>
+                <link rel="canonical" href="https://bibliophilia.pages.dev/"/>
+                <meta property="og:title" content="A Platform Where You Can Buy And Sell Your Old Books."/>
+                <meta property="og:description" content="Here on Bibliophilia,we connect you, our book lovers, directly to the sellers. In this way, you can assure everything about the book and see for yourself by having a one-to-one interaction with the seller. So what are you waiting for, sign up and boost your reading journey right away!"/>
+                <meta property="og:image" content="/images/logo.png"/>
+                <meta property="og:image:width" content="2500"/>
+                <meta property="og:image:height" content="1330"/>
+                <meta property="og:site_name" content="Bibliophilia"/>
+                <meta property="og:type" content="ecommerce"/>
+                <meta name="language" content="EN"/>
+                <meta name="country" content="IN"/>
+                <meta name="author" content="Bibliophilia"/>
+            </Helmet>
             <Navbar/>
             {/* header */}
             <div className="relative flex flex-col-reverse z-0 py-16 lg:pt-0 lg:flex-col lg:pb-0">
@@ -24,11 +40,11 @@ function index() {
                 {/* <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
                     Brand new
                 </p> */}
-                <h2 className="mb-5 font-sans text-5xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                    A Platform Where You Can Buy And Sell Your Old Books.
+                <h2 className="mb-5 font-sans text-5xl font-extrabold tracking-tight text-gray-900 sm:text-4xl leading-relaxed">
+                    A Platform Where You Can Buy  And Sell Your Old Books.
                 </h2>
-                <p className="pr-5 mb-5 text-base text-gray-700 md:text-lg">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. explicabo.
+                <p className="pr-5 mb-5 text-gray-700 md:text-lg">
+                Here on Bibliophilia,we connect you to our book lovers, directly to the sellers. In this way, you can assure everything about the book and see for yourself by having a one-to-one interaction with the seller. So what are you waiting for, sign up and boost your reading journey right away!
                 </p>
                 <div className="flex items-center">
                     <Link

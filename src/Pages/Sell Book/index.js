@@ -4,6 +4,7 @@ import {useAuth} from '../../Context/AuthContext'
 import {Navbar} from '../../Components/Navbar'
 import {Footer} from '../../Components/Footer'
 import Email from '../../Assets/svg/E-Mail (Face).svg' 
+import { Helmet } from 'react-helmet'
 
 function Index() {
     const {currentUser}= useAuth()
@@ -17,6 +18,21 @@ function Index() {
     return (
         <>
             <Navbar/>
+            <Helmet>
+                <title>Bibliophilia: Sell Your Books</title>
+                <meta name="description" content="Here on Bibliophilia,we connect you, our book lovers, directly to the sellers. In this way, you can assure everything about the book and see for yourself by having a one-to-one interaction with the seller. So what are you waiting for, sign up and boost your reading journey right away!"/>
+                <link rel="canonical" href="https://bibliophilia.pages.dev/"/>
+                <meta property="og:title" content="A Platform Where You Can Buy And Sell Your Old Books."/>
+                <meta property="og:description" content="Here on Bibliophilia,we connect you, our book lovers, directly to the sellers. In this way, you can assure everything about the book and see for yourself by having a one-to-one interaction with the seller. So what are you waiting for, sign up and boost your reading journey right away!"/>
+                <meta property="og:image" content="/images/logo.png"/>
+                <meta property="og:image:width" content="2500"/>
+                <meta property="og:image:height" content="1330"/>
+                <meta property="og:site_name" content="Bibliophilia"/>
+                <meta property="og:type" content="ecommerce"/>
+                <meta name="language" content="EN"/>
+                <meta name="country" content="IN"/>
+                <meta name="author" content="Bibliophilia"/>
+            </Helmet>
             <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32  ">
                 <div className="flex flex-col justify-between">
                     <div className="space-y-2">
@@ -34,7 +50,7 @@ function Index() {
                         <label htmlFor="contact-info" className="text-sm font-bold">Contact Number</label>
                         <input id="contact-info" type="text" name="contact-info" placeholder="" className="w-full p-3 rounded border-2 border-black" required/>
                     </div>
-                    <div>
+                    <div> 
                         <label htmlFor="email" className="text-sm font-bold">Email</label>
                         <input id="email" type="email" name="email" className="w-full p-3 rounded border-2 border-black" required/>
                     </div>
