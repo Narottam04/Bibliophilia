@@ -47,6 +47,9 @@ function Login() {
         <div className="flex flex-col justify-center flex-1 px-4 py-12  sm:px-6 lg:flex-none lg:px-20 xl:px-24">
             <div className="w-full max-w-xl mx-auto lg:w-96">
             <div>
+                <Link to = "/" >
+                    <img src="https://img.icons8.com/ios-filled/50/000000/circled-left-2.png" className = "mb-6"/>
+                </Link>
                 <a href="/" className="font-yeseva text-blue-400 text-medium">Bibliophilia</a>
                 <h2 className="font-merriweather mt-6 text-3xl font-bold text-neutral-600"> Log In. </h2>
                 {error && <p className = "error">{error}</p> }
