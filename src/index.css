@@ -28,3 +28,14 @@
     33%{box-shadow: 20px 0 #eb8f72,-20px 0 #00000022;background: #00000022}
     66%{box-shadow: 20px 0 #00000022,-20px 0 #eb8f72;background: #00000022}
 }
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}

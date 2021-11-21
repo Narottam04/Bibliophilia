@@ -9,6 +9,7 @@ import SellBook from './Pages/Sell Book'
 import ViewAllBooks from './Pages/ViewAllBooks'
 import ProductOverview from './Components/ProductOverview'
 import SellerInfo from './Components/SellerInfo'
+import ThankYou from './Pages/Thank You/ThankYou'
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
           <Route path = "/contact"  element = {<ContactUs />} />
           <Route path = "/sellbook"  element = {<SellBook />} />
           <Route path = "/allbooks"  element = {<ViewAllBooks />} />
+          <Route path = "/thankyou"  element = {<ThankYou />} />
           <Route path = "/products/:productId" element = {<ProductOverview />} />
           <Route path = "/sellerinfo/:productId" element = {<SellerInfo />} />
         </Routes>
