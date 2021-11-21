@@ -55,13 +55,13 @@ function Login() {
                 <div className="mt-6">
                 <form onSubmit = {handleSubmit} className="space-y-6">
                     <div>
-                    <label for="email" className="block text-sm font-medium text-neutral-600"> Email address </label>
+                    <label htmlFor="email" className="block text-sm font-medium text-neutral-600"> Email address </label>
                     <div className="mt-1">
                         <input id="email" name="email" type="email" autoComplete="email" required ref = {emailref} placeholder="Your Email" className="block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg  text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"/>
                     </div>
                     </div>
                     <div className="space-y-1">
-                    <label for="password" className="block text-sm font-medium text-neutral-600"> Password </label>
+                    <label htmlFor="password" className="block text-sm font-medium text-neutral-600"> Password </label>
                     <div className="mt-1">
                         <input id="password" name="password" type="password" autoComplete="current-password" required ref = {passwordref} placeholder="Your Password" className="block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg  text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
                     </div>
@@ -109,7 +109,7 @@ function Login() {
                 focus:ring-gray-500
                 ">
                     <div className="flex items-center justify-center">
-                        <img src="https://img.icons8.com/color/48/000000/google-logo.png" classNameName = ""/>
+                        <img src="https://img.icons8.com/color/48/000000/google-logo.png" />
                         <span className="ml-4"> Log in with Google</span>
                     </div>
                     </button>

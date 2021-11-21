@@ -61,19 +61,19 @@ function Signup() {
                 {error && <p className = "error">{error}</p> }
                 <form onSubmit = {handleSubmit} className="space-y-6">
                     <div>
-                    <label for="email" className="block text-sm font-medium text-neutral-600"> Email address </label>
+                    <label htmlFor="email" className="block text-sm font-medium text-neutral-600"> Email address </label>
                     <div className="mt-1">
                         <input id="email" name="email" type="email" autoComplete="email"    ref = {emailref} required placeholder="Your Email" className="block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg  text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"/>
                     </div>
                     </div>
                     <div className="space-y-1">
-                    <label for="password" className="block text-sm font-medium text-neutral-600"> Password </label>
+                    <label htmlFor="password" className="block text-sm font-medium text-neutral-600"> Password </label>
                     <div className="mt-1">
                         <input id="password" name="password" type="password" autoComplete="current-password" ref = {passwordref}  required placeholder="Your Password" className="block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg  text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
                     </div>
                     </div>
                     <div className="space-y-1">
-                    <label for="password" className="block text-sm font-medium text-neutral-600"> Confirm Password </label>
+                    <label htmlFor="password" className="block text-sm font-medium text-neutral-600"> Confirm Password </label>
                     <div className="mt-1">
                         <input id="password" name="password" type="password" autoComplete="current-password" ref = {passwordconfirmref} required placeholder="Confirm your Password" className="block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg  text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
                     </div>
@@ -125,7 +125,7 @@ function Signup() {
                 focus:ring-gray-500
                 ">
                     <a onClick = {()=>googleSignUp()} className="flex items-center justify-center">
-                        <img src="https://img.icons8.com/color/48/000000/google-logo.png" classNameName = ""/>
+                        <img src="https://img.icons8.com/color/48/000000/google-logo.png" />
                         <span className="ml-4"> Log in with Google</span>
                     </a>
                     </button>

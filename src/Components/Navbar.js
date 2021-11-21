@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink,Link } from 'react-router-dom';
 import {useAuth} from '../Context/AuthContext'
 
 export const Navbar = () => {
@@ -126,7 +126,7 @@ export const Navbar = () => {
               </svg>
             </button>
             {isMenuOpen && (
-              <div className="absolute top-0 left-0 w-full">
+              <div className="absolute top-0 left-0 w-full z-50 bg-white">
                 <div className="p-5 bg-white border rounded shadow-sm">
                   <div className="flex items-center justify-between mb-4">
                     <div>
@@ -160,64 +160,44 @@ export const Navbar = () => {
                   <nav>
                     <ul className="space-y-4">
                       <li>
-                        <a
-                          href="/"
+                        <Link
+                          to="/allbooks"
                           aria-label="Our product"
                           title="Our product"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:"
                         >
-                          Product
-                        </a>
+                          View All Books
+                        </Link>
                       </li>
                       <li>
-                        <a
-                          href="/"
+                        <Link
+                          to="/sellbook"
                           aria-label="Our product"
                           title="Our product"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:"
                         >
-                          Features
-                        </a>
+                          Sell Books
+                        </Link>
                       </li>
                       <li>
-                        <a
-                          href="/"
+                        <Link
+                          to="/contact"
                           aria-label="Product pricing"
                           title="Product pricing"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:"
                         >
-                          Pricing
-                        </a>
+                          Contact Us
+                        </Link>
                       </li>
                       <li>
-                        <a
-                          href="/"
-                          aria-label="About us"
-                          title="About us"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:"
-                        >
-                          About us
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="/"
-                          aria-label="Sign in"
-                          title="Sign in"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:"
-                        >
-                          Sign in
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="/"
-                          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white  transition duration-200 rounded shadow-md  focus:shadow-outline focus:outline-none"
+                        <Link
+                          to="/signup"
+                          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white bg-blue-400 transition duration-200 rounded shadow-md  focus:shadow-outline focus:outline-none"
                           aria-label="Sign up"
                           title="Sign up"
                         >
                           Sign up
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </nav>

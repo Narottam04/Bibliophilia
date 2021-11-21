@@ -27,27 +27,27 @@ function Index() {
                 </div>
                 <form action="https://formsubmit.co/007sahuraj@gmail.com" method="POST" enctype="multipart/form-data" className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div>
-                        <label for="name" className="text-sm font-bold">Full Name</label>
+                        <label htmlFor="name" className="text-sm font-bold">Full Name</label>
                         <input id="name" type="text" name="name" placeholder="" className="w-full p-3 rounded border-2 border-black" required/>
                     </div>
                     <div>
-                        <label for="contact-info" className="text-sm font-bold">Contact Number</label>
+                        <label htmlFor="contact-info" className="text-sm font-bold">Contact Number</label>
                         <input id="contact-info" type="text" name="contact-info" placeholder="" className="w-full p-3 rounded border-2 border-black" required/>
                     </div>
                     <div>
-                        <label for="email" className="text-sm font-bold">Email</label>
+                        <label htmlFor="email" className="text-sm font-bold">Email</label>
                         <input id="email" type="email" name="email" className="w-full p-3 rounded border-2 border-black" required/>
                     </div>
                     <div>
-                        <label for="contact-info" className="text-sm font-bold">Book Name</label>
+                        <label htmlFor="contact-info" className="text-sm font-bold">Book Name</label>
                         <input id="contact-info" type="text" name="book_name" placeholder="" className="w-full p-3 rounded border-2 border-black" required/>
                     </div>
                     <div>
-                        <label for="message" className="text-sm font-bold">Book Description</label>
+                        <label htmlFor="message" className="text-sm font-bold">Book Description</label>
                         <textarea id="message" type = "text" name = "message" rows="3" className="w-full p-3 rounded border-2 border-black" placeholder = "Write Description of book in 30 words, you can copy paste the book description from google" required></textarea>
                     </div>
                     <div className = "">
-                        <label for="file-upload" class="custom-file-upload bg-blue-500 text-white">
+                        <label htmlFor="file-upload" class="custom-file-upload bg-blue-500 text-white">
                             Upload Product Image!
                         </label>
                         <input id="file-upload" name="attachment" accept="image/png, image/jpeg" type="file"/>

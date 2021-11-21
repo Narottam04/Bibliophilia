@@ -17,15 +17,15 @@ function index() {
                 </div>
                 <form action="https://formsubmit.co/007sahuraj@gmail.com" method="POST" className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div>
-                        <label for="name" className="text-sm font-bold">Full name</label>
+                        <label htmlFor="name" className="text-sm font-bold">Full name</label>
                         <input id="name" type="text" name="name" placeholder="" className="w-full p-3 rounded border-2 border-black" required/>
                     </div>
                     <div>
-                        <label for="email" className="text-sm font-bold">Email</label>
+                        <label htmlFor="email" className="text-sm font-bold">Email</label>
                         <input id="email" type="email" name="email" className="w-full p-3 rounded border-2 border-black" required/>
                     </div>
                     <div>
-                        <label for="message" className="text-sm font-bold">Message</label>
+                        <label htmlFor="message" className="text-sm font-bold">Message</label>
                         <textarea id="message" type = "text" name = "message" rows="3" className="w-full p-3 rounded border-2 border-black" required></textarea>
                     </div>
                     <input type="hidden" name="_next" value="https://bibliophilia.pages.dev/thankyou"/>
