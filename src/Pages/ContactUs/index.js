@@ -9,7 +9,7 @@ function index() {
         <div>
             <Helmet>
                 <title>Bibliophilia: Contact Us</title>
-                <meta name="description" content="Here on Bibliophilia,we connect you, our book lovers, directly to the sellers. In this way, you can assure everything about the book and see for yourself by having a one-to-one interaction with the seller. So what are you waiting for, sign up and boost your reading journey right away!"/>
+                <meta name="description" content="Here on Bibliophilia,we connect you, our book lovers, directly to the sellers. In this way, you can assure everything about the book and see for yourself by having a one-to-one interaction with the seller. So what are you waiting for, sign up and boost your reading journey right away!"/>  asfklj
                 <link rel="canonical" href="https://bibliophilia.pages.dev/"/>
                 <meta property="og:title" content="A Platform Where You Can Buy And Sell Your Old Books."/>
                 <meta property="og:description" content="Here on Bibliophilia,we connect you, our book lovers, directly to the sellers. In this way, you can assure everything about the book and see for yourself by having a one-to-one interaction with the seller. So what are you waiting for, sign up and boost your reading journey right away!"/>

@@ -42,7 +42,7 @@ function ProductOverview() {
         }
     }
 
-    console.log(product)
+    // console.log(product)
     // console.log(params.productId);
     return (
         <div>
@@ -53,7 +53,7 @@ function ProductOverview() {
                     <div className="lg:w-4/5 mx-auto flex justify-center flex-wrap">
                     <img alt="ecommerce" className="lg:w-1/3  w-full object-contain object-center rounded border border-gray-200" src={product.image.url} alt = {product.name}/>
                     <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                        <h2 className="text-sm title-font text-gray-500 tracking-widest">Novel</h2>
+                        <h2 className="text-sm title-font text-gray-500 tracking-widest">{product.categories[0].name}</h2>
                         <h1 className="text-gray-900 text-3xl title-font font-medium mb-5">{product.name}</h1>
                         
                         <p dangerouslySetInnerHTML={{__html: product.description}} className="leading-relaxed"/>
