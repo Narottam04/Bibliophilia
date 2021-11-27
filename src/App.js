@@ -6,6 +6,7 @@ import SignUp from './Pages/Sign Up/Signup'
 import Login from './Pages/Login/Login'
 import ContactUs from './Pages/ContactUs'
 import SellBook from './Pages/Sell Book'
+import Wishlist from './Pages/wishlist/Wishlist'
 import ViewAllBooks from './Pages/ViewAllBooks/ViewAllBooks'
 import ProductOverview from './Components/ProductOverview'
 import SellerInfo from './Components/SellerInfo'
@@ -22,6 +23,7 @@ function App() {
           <Route path = "/sellbook"  element = {<SellBook />} />
           <Route path = "/allbooks"  element = {<ViewAllBooks />} />
           <Route path = "/thankyou"  element = {<ThankYou />} />
+          <Route path = "/wishlist"  element = {<Wishlist />} />
           <Route path = "/products/:productId" element = {<ProductOverview />} />
           <Route path = "/sellerinfo/:productId" element = {<SellerInfo />} />
         </Routes>

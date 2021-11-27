@@ -63,6 +63,16 @@ export const Navbar = () => {
                   Contact Us
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to="/wishlist"
+                  aria-label="Product pricing"
+                  title="Product pricing"
+                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:"
+                >
+                  Your Wishlist
+                </NavLink>
+              </li>
             </ul>
           </div>
           {
@@ -187,6 +197,16 @@ export const Navbar = () => {
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:"
                         >
                           Contact Us
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/wishlist"
+                          aria-label="Product pricing"
+                          title="Product pricing"
+                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:"
+                        >
+                          Your Wishlist
                         </Link>
                       </li>
                       <li>
