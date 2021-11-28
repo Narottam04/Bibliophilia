@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@capacitor/android": "^3.3.2",
+    "@capacitor/cli": "^3.3.2",
+    "@capacitor/core": "^3.3.2",
+    "@capacitor/ios": "^3.3.2",
     "@chec/commerce.js": "^2.8.0",
     "@craco/craco": "^6.4.0",
     "@testing-library/jest-dom": "^5.15.0",
