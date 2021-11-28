@@ -5,12 +5,12 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">BIBLIOPHILIA</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    A Platform Where You Can Buy And Sell Your Old Books.
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Narottam04/Bibliophilia"><strong>Explore repository »</strong></a>
     <br />
     <br />
     <a href="https://bibliophilia.pages.dev/">View Demo</a>
